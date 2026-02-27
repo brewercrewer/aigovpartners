@@ -105,29 +105,63 @@
       </div>
     </div>
 
-    <hr />
+   <div class="bottomRow">
+  <div class="card">
+    <div class="kicker">Built by operators</div>
+    <p class="small">
+      Founded by fintech compliance operators with direct sponsor-bank program experience.
+      Our focus is defensibility — not model development.
+    </p>
+  </div>
 
-<div style="display:flex; justify-content:flex-end; margin-top:10px; margin-bottom:18px;">
-  <img src="founders.png"
-       alt="AIGovPartners Founders"
-       style="max-width:160px; width:100%; border-radius:10px; opacity:0.9;">
+  <div class="imgCol">
+    <img src="founders.png"
+         alt="AIGovPartners Founders"
+         class="foundersImg">
+  </div>
+
+  <div class="card">
+    <div class="kicker">Contact</div>
+    <p class="small">
+      Initial conversations are exploratory and confidential.
+    </p>
+
+    <div style="margin-top:12px;">
+      <a class="btn primary"
+         href="mailto:hello@aigovpartners.com?subject=Intro%20Call%20%E2%80%94%20AIGovPartners">
+        Start the conversation
+      </a>
+    </div>
+  </div>
 </div>
 
-<div class="card">
-  <div class="kicker">Built by operators</div>
-  <p class="small">
-    Founded by fintech compliance operators with direct sponsor-bank program experience.
-    Our focus is defensibility — not model development.
-  </p>
-</div>
-
-<div class="section card" style="margin-top:18px;">
-  <div class="kicker">Contact</div>
-  <p class="small">
-    Email: <span class="mono">hello@aigovpartners.com</span> (set up later) —
-    for now use <a href="mailto:hello@aigovpartners.com?subject=Intro%20Call%20%E2%80%94%20AIGovPartners">this email link</a>.
-  </p>
-</div>
+<style>
+  .bottomRow{
+    display:grid;
+    grid-template-columns: 1.2fr 0.35fr 0.9fr;
+    gap:14px;
+    align-items:start;
+    margin-top:18px;
+  }
+  .imgCol{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding-top:10px;
+  }
+  .foundersImg{
+    width:100%;
+    max-width:140px;
+    border-radius:10px;
+    opacity:0.92;
+    display:block;
+  }
+  @media (max-width: 860px){
+    .bottomRow{ grid-template-columns:1fr; }
+    .imgCol{ justify-content:flex-start; padding-top:0; }
+    .foundersImg{ max-width:160px; }
+  }
+</style>
 
 <footer>
   <div>© <span id="y"></span> AIGovPartners</div>
