@@ -10,12 +10,14 @@
     * { box-sizing:border-box; }
     body {
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 800px at 20% 0%, #152039 0%, var(--bg) 55%),
-                  radial-gradient(900px 600px at 90% 30%, #1a2a4a 0%, var(--bg) 60%),
-                  var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 20% 0%, #152039 0%, var(--bg) 55%),
+        radial-gradient(900px 600px at 90% 30%, #1a2a4a 0%, var(--bg) 60%),
+        var(--bg);
       color:var(--text);
     }
+    a { color:inherit; }
     .wrap { max-width:980px; margin:0 auto; padding:56px 20px; }
     .top { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:40px; }
     .brand { font-weight:700; letter-spacing:0.2px; }
@@ -24,47 +26,28 @@
     @media (max-width: 860px){ .hero{ grid-template-columns:1fr; } }
     h1 { font-size:44px; line-height:1.05; margin:0 0 12px; letter-spacing:-0.6px; }
     p { margin:0 0 14px; color:var(--muted); font-size:16px; line-height:1.55; }
-    .card { background:rgba(16,23,35,.72); border:1px solid var(--line); border-radius:18px; padding:22px; backdrop-filter: blur(10px); }
+    .card { background:rgba(16,23,35,.72); border:1px solid var(--line); border-radius:18px; padding:18px; backdrop-filter: blur(10px); }
     .ctaRow { display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; }
     .btn {
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 16px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      text-decoration:none;
-      font-weight:600;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px; border-radius:12px; border:1px solid var(--line);
+      text-decoration:none; font-weight:600;
     }
-    .btn.primary {
-      background:linear-gradient(180deg, rgba(122,162,255,.22), rgba(122,162,255,.08));
-      border-color: rgba(122,162,255,.45);
-    }
+    .btn.primary { background:linear-gradient(180deg, rgba(122,162,255,.22), rgba(122,162,255,.08)); border-color: rgba(122,162,255,.45); }
     .btn:hover { transform: translateY(-1px); }
-    .kicker {
-      font-size:12px;
-      letter-spacing:0.22em;
-      text-transform:uppercase;
-      color:var(--muted);
-      margin-bottom:12px;
-    }
+    .grid3 { display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin-top:18px; }
+    @media (max-width: 860px){ .grid3{ grid-template-columns:1fr; } }
+    .kicker { font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
     .h2 { font-size:18px; margin:0 0 8px; }
-    .small { font-size:14px; color:var(--muted); margin:0; line-height:1.5; }
-    hr { border:0; border-top:1px solid var(--line); margin:40px 0; }
-    footer {
-      margin-top:40px;
-      color:var(--muted);
-      font-size:12px;
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:12px;
-    }
+    .small { font-size:13px; color:var(--muted); margin:0; line-height:1.5; }
+    .section { margin-top:26px; }
+    hr { border:0; border-top:1px solid var(--line); margin:26px 0; }
+    footer { margin-top:26px; color:var(--muted); font-size:12px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
   </style>
 </head>
 <body>
   <div class="wrap">
-
     <div class="top">
       <div class="brand">AIGovPartners</div>
       <div class="pill">AI Governance • Regulated Fintech • Sponsor-Bank Defensibility</div>
@@ -84,7 +67,7 @@
           <a class="btn" href="#work">How we work</a>
         </div>
 
-        <div class="card" style="margin-top:24px;">
+        <div class="section card" style="margin-top:18px;">
           <div class="kicker">The problem</div>
           <p class="small">
             AI is moving fast in underwriting, fraud, monitoring, and ops. Governance maturity is not keeping pace.
@@ -96,29 +79,28 @@
 
       <div class="card" id="work">
         <div class="kicker">How we work</div>
-
-        <div style="margin-bottom:18px;">
-          <div class="h2">AI Risk Exposure Assessment</div>
-          <p class="small">
-            Map where AI is used, what decisions it influences, and where governance gaps create sponsor-bank or regulatory risk.
-            Deliver a structured risk summary and prioritized roadmap.
-          </p>
-        </div>
-
-        <div style="margin-bottom:18px;">
-          <div class="h2">AI Governance Build-Out</div>
-          <p class="small">
-            Implement practical controls: use-case approvals, documentation standards, change management,
-            human review policies, and defensibility frameworks aligned to regulated fintech expectations.
-          </p>
-        </div>
-
-        <div>
-          <div class="h2">Ongoing AI Oversight</div>
-          <p class="small">
-            Quarterly review of new AI use cases, vendor changes, and model updates.
-            Maintain audit-ready posture and sponsor-bank defensibility.
-          </p>
+        <div class="grid3" style="grid-template-columns:1fr; margin-top:10px;">
+          <div class="card" style="padding:14px;">
+            <div class="h2">AI Risk Exposure Assessment</div>
+            <p class="small">
+              Map where AI is used, what decisions it influences, and where gaps create sponsor-bank or regulatory risk.
+              Output: structured risk summary + prioritized roadmap.
+            </p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <div class="h2">AI Governance Build-Out</div>
+            <p class="small">
+              Practical controls: use-case approvals, documentation standards, change management,
+              human review policies, and defensibility narratives aligned to regulated fintech expectations.
+            </p>
+          </div>
+          <div class="card" style="padding:14px;">
+            <div class="h2">Ongoing AI Oversight</div>
+            <p class="small">
+              Quarterly review of new AI use cases, vendor changes, and model updates.
+              Maintain audit-ready posture and sponsor-bank defensibility.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -132,19 +114,20 @@
         Our focus is defensibility — not model development.
       </p>
 
-      <div style="margin-top:24px; text-align:center;">
+      <!-- Subtle founders image (small, not centered, no border) -->
+      <div style="margin-top:14px;">
         <img src="founders.png"
              alt="AIGovPartners Founders"
-             style="max-width:280px; width:100%; border-radius:16px; border:1px solid #223044;">
+             style="max-width:200px; width:100%; border-radius:12px; display:block;">
       </div>
     </div>
 
-    <div class="card" style="margin-top:28px;">
+    <div class="section card" style="margin-top:18px;">
       <div class="kicker">Contact</div>
       <p class="small">
         Initial conversations are exploratory and confidential.
       </p>
-      <div style="margin-top:16px;">
+      <div style="margin-top:14px;">
         <a class="btn primary" href="mailto:hello@aigovpartners.com?subject=Intro%20Call%20%E2%80%94%20AIGovPartners">Start the conversation</a>
       </div>
     </div>
@@ -153,7 +136,6 @@
       <div>© <span id="y"></span> AIGovPartners</div>
       <div>Independent advisory. No regulatory guarantees. Confidential engagement.</div>
     </footer>
-
   </div>
 
   <script>
